@@ -1,0 +1,129 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 980;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 8, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.stage {
+  position: relative;
+  width: min(92vw, 1200px);
+  height: min(82vh, 800px);
+  outline: none;
+}
+
+.imageWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.close {
+  position: absolute;
+  z-index: 2;
+  top: -3rem;
+  right: 0;
+  display: inline-flex;
+  padding: 0.6rem;
+  color: var(--color-text-inverse);
+  border-radius: 999px;
+}
+
+@media (max-width: 640px) {
+  .close {
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.counter {
+  position: absolute;
+  z-index: 2;
+  top: -3rem;
+  left: 0;
+  color: rgba(251, 248, 243, 0.85);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 640px) {
+  .counter {
+    top: 0.7rem;
+    left: 0.75rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+  }
+}
+
+.navButton {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  color: var(--color-text-inverse);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.prev {
+  left: -1.5rem;
+}
+
+.next {
+  right: -1.5rem;
+}
+
+@media (max-width: 900px) {
+  .prev {
+    left: 0.5rem;
+  }
+  .next {
+    right: 0.5rem;
+  }
+}
+
+.caption {
+  position: absolute;
+  z-index: 2;
+  bottom: -2.5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(251, 248, 243, 0.7);
+  font-size: var(--font-size-xs);
+}
+
+@media (max-width: 640px) {
+  .caption {
+    bottom: 0.6rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    padding: 0.4rem 0.7rem;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: var(--radius-sm);
+  }
+}

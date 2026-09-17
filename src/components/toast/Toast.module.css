@@ -1,0 +1,90 @@
+.viewport {
+  position: fixed;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  pointer-events: none;
+
+  top: max(1.25rem, env(safe-area-inset-top));
+  right: 1.25rem;
+  left: auto;
+  align-items: flex-end;
+}
+
+@media (max-width: 640px) {
+  .viewport {
+    top: auto;
+    bottom: max(1.25rem, env(safe-area-inset-bottom));
+    left: 1rem;
+    right: 1rem;
+    align-items: stretch;
+  }
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1.1rem;
+  min-width: 15rem;
+  max-width: 22rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+@media (max-width: 640px) {
+  .toast {
+    max-width: none;
+  }
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+}
+
+.success .icon {
+  color: var(--color-primary);
+}
+.error .icon {
+  color: var(--color-danger);
+}
+.info .icon {
+  color: var(--color-primary);
+}
+.loading .icon {
+  color: var(--color-text-muted);
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.message {
+  line-height: 1.4;
+}
+
+.close {
+  margin-left: auto;
+  flex-shrink: 0;
+  display: inline-flex;
+  color: var(--color-text-muted);
+  padding: 0.2rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.close:hover {
+  color: var(--color-text);
+}

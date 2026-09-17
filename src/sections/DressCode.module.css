@@ -1,0 +1,125 @@
+.section {
+  background: var(--color-background-alt);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr 0.9fr;
+  }
+}
+
+.imageBox {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 860px) {
+  .imageBox {
+    order: 2;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: flex-start;
+}
+
+.level {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+.description {
+  font-family: var(--font-sans);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* modal content */
+.groups {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 480px) {
+  .groups {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.groupTitle {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.groupList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.colorChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--font-size-xs);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-surface-sunken);
+  color: var(--color-text);
+}
+
+.swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+}
+
+.considerations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.considerationItem {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.considerationIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-primary);
+}

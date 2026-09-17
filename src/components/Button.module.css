@@ -1,0 +1,118 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.95em 1.9em;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    background-color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.icon {
+  display: inline-flex;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.button:hover:not(:disabled) .icon {
+  transform: translateX(3px);
+}
+
+/* variants */
+.primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+.primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  box-shadow: var(--shadow-soft);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border-strong);
+}
+.secondary:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-text-inverse);
+  border-color: rgba(251, 248, 243, 0.4);
+}
+.ghost:hover:not(:disabled) {
+  border-color: var(--color-text-inverse);
+  background: rgba(251, 248, 243, 0.12);
+}
+
+.inverse {
+  background: var(--color-text-inverse);
+  color: var(--color-primary);
+}
+.inverse:hover:not(:disabled) {
+  background: var(--color-background-alt);
+}
+
+/* sizes */
+.sm {
+  padding: 0.65em 1.4em;
+  font-size: var(--font-size-xs);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading {
+  color: transparent !important;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinnerIcon {
+  animation: spin 0.85s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinnerIcon {
+    animation-duration: 1.4s;
+  }
+}
+
+.success {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}

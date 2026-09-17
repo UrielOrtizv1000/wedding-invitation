@@ -1,0 +1,35 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.date {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.3em;
+  color: var(--color-text-muted);
+}
+
+.skip {
+  position: absolute;
+  bottom: 2rem;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.skip:hover {
+  color: var(--color-text);
+}

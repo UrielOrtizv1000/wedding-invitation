@@ -1,0 +1,58 @@
+:root {
+  /* color — roles (see DESIGN.md) */
+  --color-background: #fbf8f3;
+  --color-background-alt: #e4e9e0;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #ede6db;
+  --color-primary: #5c6e5a;
+  --color-primary-hover: #46543f;
+  --color-secondary: #22221f;
+  --color-accent: #b48a3f;
+  --color-text: #22221f;
+  --color-text-muted: #5a5850;
+  --color-text-inverse: #fbf8f3;
+  --color-overlay: rgba(20, 20, 17, 0.55);
+  --color-border: rgba(34, 34, 31, 0.12);
+  --color-border-strong: rgba(34, 34, 31, 0.22);
+  --color-danger: #a3403a;
+  --color-danger-bg: #f7eae8;
+
+  /* radii / elevation */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --shadow-soft: 0 20px 60px -20px rgba(34, 34, 31, 0.18);
+  --blur-glass: 14px;
+
+  /* type */
+  --font-serif: "Instrument Serif", "Iowan Old Style", serif;
+  --font-sans: "Instrument Sans", -apple-system, "Segoe UI", sans-serif;
+  --font-script: "Caveat", cursive;
+
+  --font-size-xs: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
+  --font-size-sm: clamp(0.85rem, 0.82rem + 0.15vw, 0.95rem);
+  --font-size-base: clamp(1rem, 0.97rem + 0.2vw, 1.125rem);
+  --font-size-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.6rem);
+  --font-size-xl: clamp(1.9rem, 1.6rem + 1.4vw, 2.75rem);
+  --font-size-2xl: clamp(3rem, 2.2rem + 4vw, 7rem);
+
+  /* motion — single family */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 620ms;
+
+  /* layout */
+  --content-max: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --navbar-h: 76px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur-base: 1ms;
+    --dur-slow: 1ms;
+  }
+}

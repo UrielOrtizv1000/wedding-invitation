@@ -1,0 +1,14 @@
+.panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(var(--blur-glass));
+  -webkit-backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-lg);
+}
+
+.dark {
+  background: rgba(34, 34, 31, 0.55);
+  border-color: rgba(251, 248, 243, 0.14);
+  color: var(--color-text-inverse);
+}
